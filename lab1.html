@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para">Welcome</p>
+</body>
+<script>
+let paragraph = document.getElementById("para");
+let isGrowing = true;
+let fontSize = 23; 
+
+function fontChange() {
+    if (isGrowing) {
+        fontSize += 2;
+        if (fontSize > 200) isGrowing = false;
+    } else {
+        fontSize -= 1;
+        if (fontSize < 16) isGrowing = true;
+    }
+    paragraph.style.fontSize = fontSize + 'px';
+}
+setInterval(fontChange, 100);
+</script>
+</html>
